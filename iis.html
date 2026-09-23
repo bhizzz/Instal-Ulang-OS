@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Alat Instal Ulang Windows</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 3rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #38bdf8;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+        .guide-box {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+        .guide-box h2 {
+            color: #38bdf8;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .guide-box ol {
+            padding-left: 1.2rem;
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .btn-download {
+            background: #0284c7;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+        }
+        .btn-download:hover {
+            background: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Windows Post-Install & IIS Guide</h1>
+        <p>Portal unduhan tools instal ulang dan panduan pembuatan Web Server IIS lokal</p>
+    </header>
+
+    <!-- BAGIAN 1: PANDUAN MEMBUAT WEB SERVER IIS (DITAMPILKAN DI WEB) -->
+    <div class="guide-box">
+        <h2>Cara Membuat Web Server IIS di Laptop Anda:</h2>
+        <ol>
+            <li>Tekan tombol <strong>Windows + R</strong> di keyboard, ketik <strong>optionalfeatures</strong>, lalu tekan Enter.</li>
+            <li>Cari pilihan <strong>Internet Information Services (IIS)</strong>, lalu beri centang pada kotak tersebut dan klik OK.</li>
+            <li>Setelah terpasang, file website ini bisa Anda pindahkan ke folder bawaan IIS komputer Anda di direktori: <strong>C:\inetpub\wwwroot\</strong></li>
+            <li>Buka browser baru, ketik <strong>localhost</strong> di kolom alamat untuk menguji server lokal Anda sendiri.</li>
+        </ol>
+    </div>
+
+    <!-- BAGIAN 2: TOMBOL DOWNLOAD DOWNLOAD TOOLS PENDUKUNG -->
+    <div class="card-grid">
+        <!-- ITEM 1: DRIVERPACK -->
+        <div class="card">
+            <div>
+                <h3>Driverpack Online</h3>
+                <p>Mencari dan memasang driver hardware (Audio, VGA, Wi-Fi) yang hilang secara otomatis setelah instal ulang.</p>
+            </div>
+            <!-- Link download langsung mengarah ke server resmi Driverpack -->
+            <a href="https://driverpack.io" target="_blank" class="btn-download">Download Driverpack</a>
+        </div>
+
+        <!-- ITEM 2: GOOGLE CHROME -->
+        <div class="card">
+            <div>
+                <h3>Google Chrome</h3>
+                <p>Browser web paling populer untuk membuka internet setelah sistem operasi Windows baru selesai dipasang.</p>
+            </div>
+            <a href="https://google.com" target="_blank" class="btn-download">Download Chrome</a>
+        </div>
+
+        <!-- ITEM 3: WINRAR -->
+        <div class="card">
+            <div>
+                <h3>WinRAR Archiver</h3>
+                <p>Software penting untuk membuka, mengekstrak, dan mengompres file yang berformat .zip atau .rar.</p>
+            </div>
+            <a href="https://rarlab.com" target="_blank" class="btn-download">Download WinRAR</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
