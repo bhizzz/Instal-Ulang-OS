@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Efek warna terminal biar kelihatan sepuh/madep
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+clear
+echo -e "${BLUE}======================================================${NC}"
+echo -e "${GREEN}    WIZARD INSTAL ULANG OS v4.2.0 - JALUR PASRAH      ${NC}"
+echo -e "${BLUE}======================================================${NC}"
+echo ""
+
+sleep 1
+echo -e "${YELLOW}[?] Memulai pemindaian mental hardware...${NC}"
+sleep 1.5
+echo -e "${GREEN}[✓] CPU Terdeteksi: Otak Udang Core i9 (Kondisi: Lelah)${NC}"
+echo -e "${GREEN}[✓] RAM Terdeteksi: 16GB (Sisa 2MB gara-gara Chrome)${NC}"
+echo -e "${GREEN}[✓] Storage: Penuh dengan penyesalan masa lalu.${NC}"
+echo ""
+
+# Pertanyaan Interaktif Kocak
+read -p "Apakah Anda yakin ingin menghapus seluruh OS lama? (y/t/gatau): " pilihan
+
+if [ "$pilihan" = "y" ] || [ "$pilihan" = "Y" ]; then
+    echo -e "\n${RED}[!] Menghancurkan sistem lama... Goodbye Windows/Mac/Ubuntu ampas!${NC}"
+elif [ "$pilihan" = "gatau" ]; then
+    echo -e "\n${YELLOW}[!] Pilihan yang bijak. Mari kita serahkan pada takdir.${NC}"
+else
+    echo -e "\n${RED}[!] Penakut. Tapi ya sudahlah, kita gas aja tetep instal!${NC}"
+fi
+
+sleep 1.5
+echo ""
+echo -e "${BLUE}[*] Mengunduh OS Baru dari server ghaib...${NC}"
+
+# Fungsi Progress Bar Palsu tapi Madep
+progress_bar() {
+    local duration=$1
+    local pbar=""
+    for ((i=1; i<=20; i++)); do
+        pbar+="#"
+        echo -ne "\r[${GREEN}%-20s${NC}] $((i*5))%" "$pbar"
+        sleep 0.2
+    done
+    echo -e "\n"
+}
+
+progress_bar
+
+echo -e "${YELLOW}[!] Waduh, ada error sedikit...${NC}"
+sleep 1
+echo -e "${RED}[ERR] Deteksi folder 'Folder_Rahasia_Jangan_Dibuka' terlalu berat.${NC}"
+sleep 1
+echo -e "${YELLOW}[*] Mengabaikan dosa-dosa user dan melanjutkan instalasi...${NC}"
+echo ""
+
+sleep 1
+echo -e "${BLUE}[*] Menyusun partisi masa depan yang lebih cerah...${NC}"
+progress_bar
+
+# Finalisasi
+echo -e "${GREEN}======================================================${NC}"
+echo -e "${GREEN} 🎉 PROSES INSTAL ULANG SELESAI SECARA GHAIB! 🎉     ${NC}"
+echo -e "${GREEN}======================================================${NC}"
+echo ""
+echo -e "Silakan restart laptop Anda."
+echo -e "Jika layar tetap hitam, cobalah untuk ${YELLOW}sholat taubat${NC} atau ${RED}beli baru${NC}."
+echo ""
