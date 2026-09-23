@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instal Ulang OS - Simulator</title>
+    <title>Panduan Instal Ulang Windows</title>
     <style>
         * {
             margin: 0;
@@ -12,150 +12,142 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            overflow: hidden;
+            padding: 2rem 1rem;
         }
         .container {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #6366f1, #a855f7);
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
         }
-        p {
+        header p {
             color: #94a3b8;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
         }
-        .console {
-            background: #020617;
-            border: 1px solid #334155;
+        .section-title {
+            font-size: 1.3rem;
+            color: #38bdf8;
+            margin: 2rem 0 1rem 0;
+            border-left: 4px solid #38bdf8;
+            padding-left: 0.5rem;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        .step-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+        .step-number {
+            background: #38bdf8;
+            color: #0f172a;
+            font-weight: bold;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+        .step-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+        .step-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
             border-radius: 8px;
             padding: 1rem;
-            text-align: left;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.85rem;
-            color: #38bdf8;
-            height: 120px;
-            overflow-y: auto;
-            margin-bottom: 2rem;
-        }
-        .btn-install {
-            background: linear-gradient(to right, #4f46e5, #7c3aed);
-            color: white;
-            border: none;
-            padding: 0.75rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.4);
-        }
-        .btn-install:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.5);
-        }
-        .btn-install:active {
-            transform: translateY(0);
-        }
-        .progress-bar {
-            width: 100%;
-            background-color: #334155;
-            border-radius: 9999px;
-            height: 8px;
-            margin-top: 1.5rem;
-            display: none;
-            overflow: hidden;
-        }
-        .progress-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(to right, #22c55e, #10b981);
-            border-radius: 9999px;
-            transition: width 0.1s linear;
+            margin-top: 1rem;
+            color: #fca5a5;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Instal Ulang OS</h1>
-    <p>Script Automated Installer System</p>
-    
-    <div class="console" id="logConsole">
-        [SYSTEM]: Siap melakukan instalasi...<br>
-        [SYSTEM]: Menunggu perintah user.
+    <header>
+        <h1>Panduan Instal Ulang Windows</h1>
+        <p>Petunjuk Lengkap Langkah Demi Langkah untuk Pemula</p>
+    </header>
+
+    <!-- TAHAP 1 -->
+    <div class="section-title">Tahap 1: Persiapan Sebelum Instalasi</div>
+    <div class="card-grid">
+        <div class="step-card">
+            <span class="step-number">Langkah 01</span>
+            <h3>Backup Data Penting</h3>
+            <p>Pindahkan semua file penting dari Drive C (termasuk folder Desktop, Documents, dan Downloads) ke Drive D atau Hardisk Eksternal agar tidak terhapus.</p>
+            <div class="warning-box">
+                <strong>PENTING:</strong> Proses instal ulang akan menghapus seluruh data di partisi sistem (Drive C).
+            </div>
+        </div>
+        <div class="step-card">
+            <span class="step-number">Langkah 02</span>
+            <h3>Siapkan Bootable Flashdisk</h3>
+            <p>Gunakan aplikasi seperti Rufus dan file ISO Windows resmi untuk membuat Bootable Flashdisk minimal berukuran 8 GB.</p>
+        </div>
     </div>
 
-    <button class="btn-install" id="installBtn" onclick="startInstallation()">Mulai Instalasi</button>
-    
-    <div class="progress-bar" id="progressContainer">
-        <div class="progress-fill" id="progressBar"></div>
+    <!-- TAHAP 2 -->
+    <div class="section-title">Tahap 2: Proses Instalasi Utama</div>
+    <div class="card-grid">
+        <div class="step-card">
+            <span class="step-number">Langkah 03</span>
+            <h3>Masuk ke Menu BIOS/Boot Menu</h3>
+            <p>Colokkan Flashdisk, nyalakan laptop, lalu tekan tombol BIOS (biasanya <strong>F2, F12, atau DEL</strong> tergantung merk laptop) untuk mengatur agar komputer booting pertama kali dari Flashdisk.</p>
+        </div>
+        <div class="step-card">
+            <span class="step-number">Langkah 04</span>
+            <h3>Mulai Windows Setup & Format Partisi</h3>
+            <p>Pilih bahasa dan format waktu, klik <em>Install Now</em>. Pilih opsi <strong>Custom: Install Windows only (advanced)</strong>. Format partisi Drive C lama Anda, lalu pilih partisi tersebut sebagai lokasi instalasi baru.</p>
+        </div>
+        <div class="step-card">
+            <span class="step-number">Langkah 05</span>
+            <h3>Proses Copy Files</h3>
+            <p>Tunggu proses instalasi berjalan hingga 100%. Laptop Anda akan otomatis melakukan restart beberapa kali selama proses ini berlangsung.</p>
+        </div>
+    </div>
+
+    <!-- TAHAP 3 -->
+    <div class="section-title">Tahap 3: Finishing & Setup Awal</div>
+    <div class="card-grid">
+        <div class="step-card">
+            <span class="step-number">Langkah 06</span>
+            <h3>Konfigurasi Windows</h3>
+            <p>Ikuti panduan di layar seperti memilih Wilayah (Region), Layout Keyboard, membuat Akun Pengguna, dan mengatur opsi privasi Windows Anda.</p>
+        </div>
     </div>
 </div>
-
-<script>
-    function startInstallation() {
-        const btn = document.getElementById('installBtn');
-        const consoleLog = document.getElementById('logConsole');
-        const progressContainer = document.getElementById('progressContainer');
-        const progressBar = document.getElementById('progressBar');
-        
-        btn.style.display = 'none';
-        progressContainer.style.display = 'block';
-        
-        let logs = [
-            "[1/4] Mengunduh package system...",
-            "[2/4] Ekstrak script Windows konfigurasi...",
-            "[3/4] Mengoptimalkan registri OS...",
-            "[4/4] Instalasi Selesai! Sistem Anda siap."
-        ];
-        
-        let currentLogIndex = 0;
-        let progress = 0;
-        
-        consoleLog.innerHTML = "[SYSTEM]: Menjalankan skrip otomatis...<br>";
-        
-        let interval = setInterval(() => {
-            progress += 2;
-            progressBar.style.width = progress + '%';
-            
-            if (progress === 25) {
-                consoleLog.innerHTML += logs[0] + "<br>";
-                consoleLog.scrollTop = consoleLog.scrollHeight;
-            } else if (progress === 50) {
-                consoleLog.innerHTML += logs[1] + "<br>";
-                consoleLog.scrollTop = consoleLog.scrollHeight;
-            } else if (progress === 75) {
-                consoleLog.innerHTML += logs[2] + "<br>";
-                consoleLog.scrollTop = consoleLog.scrollHeight;
-            }
-            
-            if (progress >= 100) {
-                clearInterval(interval);
-                consoleLog.innerHTML += "<span style='color: #22c55e;'>" + logs[3] + "</span><br>";
-                consoleLog.scrollTop = consoleLog.scrollHeight;
-            }
-        }, 100);
-    }
-</script>
 
 </body>
 </html>
